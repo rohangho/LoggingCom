@@ -8,8 +8,13 @@ import io.ktor.client.statement.*
 class Greeting {
     private val platform: Platform = getPlatform()
 
-    fun greet(): String {
-        return "Hello, ${platform.name}!"
+    fun greet(eventData:Map<*,*>) {
+       val finalEvent = eventData+ getPlatform().eventDevice()
+        //callApi()
+    }
+
+    suspend  fun callApi() {
+
     }
 
     private val client = HttpClient()

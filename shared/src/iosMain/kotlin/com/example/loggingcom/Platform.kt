@@ -3,7 +3,8 @@ package com.example.loggingcom
 import platform.UIKit.UIDevice
 
 class IOSPlatform: Platform {
-    override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
-}
+    override fun eventDevice(): Map<String, String> {
+        return  mapOf(Pair("Device Type","ios"))
+    }}
 
 actual fun getPlatform(): Platform = IOSPlatform()

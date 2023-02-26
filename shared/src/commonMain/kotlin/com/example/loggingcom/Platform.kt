@@ -1,7 +1,7 @@
 package com.example.loggingcom
 
 interface Platform {
-    val name: String
+    fun eventDevice(): Map<String,String>
 }
 
 expect fun getPlatform(): Platform
